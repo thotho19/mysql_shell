@@ -42,6 +42,30 @@ MySQL Shell can return results in table, tabbed, or vertical format, or as JSON 
 \system | \! | Run the specified operating system command and display the results in MySQL Shell.
 
 
+# Chapter 3 MySQL syntax
+**Command** | **Description** | **Syntax** 
+------------| --------------- | -----------
+show databases | show all created database | ```show databases``` 
+show tables | show all created tables inside the database | ```show tables``` 
+desc {tableName}| view table schema | ```desc {tableName}```
+insert into {tableName} (column1 , column2 ... ) values (value1 , value2 ...) | Insert to database table | ```insert into mygames (id , gameName) values (1 , "CAll Of Duty: WarZonew```
+delete from {tableName}| delete all the rows and reutrn the number of deleted rows  | ```delete from mygames```
+alter table {tableName} modify {columnName} {column_definition} | modify table schema  | ```alter table mygames modify gameName varchar(300) ```
+create user {userName}@{ipAddress}  | Create user  | ```create user nodejs@127.0.0.1```
+ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘password’;  | alter user  | ```ALTER USER nodejs@127.0.0.1 IDENTIFIED WITH mysql_native_password BY ‘Nodejs1997!’;```
+grant all on {databaseName}.* to {userName}@{ipAddress}; | Grant a database privilages to anothe user   | ```grant all on test_db.* to nodejs@127.0.0.1; ```
+
+# Important
+Under some circumstances, [CREATE USER](https://dev.mysql.com/doc/refman/8.0/en/create-user.html) may be recorded in server logs or on the client side in a history file such as ~/.mysql_history, which means that cleartext passwords may be read by anyone having read access to that information. For information about the conditions under which this occurs for the server logs and how to control it, see Section 6.1.2.3, “Passwords and Logging”. For similar information about client-side logging, see Section 4.5.1.3, “mysql Client Logging”. <br>
+
+# SET PASSWORD = 'auth_string';
+
+  Any client who connects to the server using a nonanonymous account
+  can change the password for that account. (In particular, you can
+  change your own password.) To see which account the server
+  authenticated you as, invoke the CURRENT_USER() function: <br>
+  
+  
 [Reference - Mysql Documentation](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-commands.html)
 
 
