@@ -56,8 +56,10 @@ ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY �
 grant all on {databaseName}.* to {userName}@{ipAddress}; | Grant a database privilages to anothe user   | ```grant all on test_db.* to nodejs@127.0.0.1; ```
 show grants for {userName}@{ip address}; | Show all granted privileges | ```show grants for todoApp@127.0.0.1 ```
 Constraint esablishing | Create talbe with constarint | ```create table projects (pid int not null, constraint project_const primary key(pid));  ```
-auto increment | create a talbe with auto incremet | ```create table projects (pid int not null auto_increment,pname text not null ,  constraint project_const primary key(pid));
-  ```
+auto increment | create a talbe with auto incremet | ```create table projects (pid int not null auto_increment,pname text not null ,  constraint project_const primary key(pid)); ```
+multi constraint | create double constraint table | ```create table enroll (tid int not null,pid int not null, constraint enroll_const foreign key(tid) references teachers(tid) , foreign key(pid) references projects(pid));
+```
+
 
 
 # Important
