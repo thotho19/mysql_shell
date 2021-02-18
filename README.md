@@ -55,7 +55,9 @@ create user {userName}@{ipAddress}  | Create user  | ```create user nodejs@127.0
 ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘password’;  | alter user  | ```ALTER USER nodejs@127.0.0.1 IDENTIFIED WITH mysql_native_password BY ‘Nodejs1997!’;```
 grant all on {databaseName}.* to {userName}@{ipAddress}; | Grant a database privilages to anothe user   | ```grant all on test_db.* to nodejs@127.0.0.1; ```
 show grants for {userName}@{ip address}; | Show all granted privileges | ```show grants for todoApp@127.0.0.1 ```
-Constraint esablishing | Create talbe with constarint | ```create table projects (pid int not null, constraint project_const primary key(pid)); ```
+Constraint esablishing | Create talbe with constarint | ```create table projects (pid int not null, constraint project_const primary key(pid));  ```
+auto increment | create a talbe with auto incremet | ```create table projects (pid int not null auto_increment,pname text not null ,  constraint project_const primary key(pid));
+  ```
 
 
 # Important
