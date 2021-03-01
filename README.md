@@ -59,6 +59,7 @@ Constraint esablishing | Create talbe with constarint | ```create table projects
 auto increment | create a talbe with auto incremet | ```create table projects (pid int not null auto_increment,pname text not null ,  constraint project_const primary key(pid)); ```
 multi constraint | create double constraint table | ```create table enroll (tid int not null,pid int not null, constraint enroll_const foreign key(tid) references teachers(tid) , foreign key(pid) references projects(pid));```
 Inner join | innner join between three tables | ```select users.uname , games.gname from link inner join users on (users.uid = link.uid) inner join games on (games.gid = link.gid);```
+show index | show all avaliable index for specific table | ```show index from {table name}```
 
 
 
