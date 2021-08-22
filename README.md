@@ -42,6 +42,7 @@ MySQL Shell can return results in table, tabbed, or vertical format, or as JSON 
 \system | \! | Run the specified operating system command and display the results in MySQL Shell.
 
 
+
 # Chapter 3 MySQL syntax
 **Command** | **Description** | **Syntax** 
 ------------| --------------- | -----------
@@ -60,6 +61,13 @@ auto increment | create a talbe with auto incremet | ```create table projects (p
 multi constraint | create double constraint table | ```create table enroll (tid int not null,pid int not null, constraint enroll_const foreign key(tid) references teachers(tid) , foreign key(pid) references projects(pid));```
 Inner join | innner join between three tables | ```select users.uname , games.gname from link inner join users on (users.uid = link.uid) inner join games on (games.gid = link.gid);```
 show index | show all avaliable index for specific table | ```show index from {table name}```
+ delimiter | delimiter is the marker for the end of each command you send to the mysql command line client. | ```delimite \\ ... the remaining code ```
+create procedure example | Empty |  ```delimiter //
+create procedure display_book() 
+                      -> begin 
+                      -> select *from book; 
+                      -> end //
+call display_book(); //```
 
 
 
